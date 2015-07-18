@@ -11,7 +11,7 @@ final class Simppeli37_Assets
         add_action( 'wp_enqueue_scripts', array( $this, 'fonts' ) );
         add_action( 'wp_enqueue_scripts', array( $this, 'styles' ) );
 
-        //* Register default headers/background
+        //* Register default headers
         $this->default_headers();
     }
 
