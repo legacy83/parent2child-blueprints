@@ -52,7 +52,7 @@ final class Stargazer12_Assets
         wp_dequeue_style( 'style' );
 
         $theme_uri = trailingslashit( get_stylesheet_directory_uri() );
-        wp_enqueue_style( 'stargazer12-base', "{$theme_uri}lib/assets/css/base.css", array( 'parent' ) );
+        wp_enqueue_style( 'stargazer12-theme', "{$theme_uri}lib/assets/css/theme.css", array( 'parent' ) );
         wp_enqueue_style( 'style' );
     }
 
