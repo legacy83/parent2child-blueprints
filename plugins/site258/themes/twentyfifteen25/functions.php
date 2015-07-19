@@ -9,3 +9,5 @@
  * @copyright  Copyright (c) 2015, Thiago Senna
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
+
+require_once( 'lib/twentyfifteen25.php' );

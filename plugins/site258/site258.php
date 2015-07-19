@@ -18,7 +18,7 @@ require_once( 'functionality/site258-functions.php' );
 
 if ( site258_minimal_php() ) {
 
-    require_once( 'functionality/site258-loader.php' );
+    require_once( 'functionality/site258-bootstrap.php' );
 
     // --------------------------------------------
     // theme-directory
