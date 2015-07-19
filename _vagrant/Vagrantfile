@@ -7,6 +7,7 @@ Vagrant.configure("2") do |config|
  
   config.ssh.insert_key = false
   config.vm.synced_folder "..", "/vagrant"
+  config.vm.synced_folder "../plugins/site258", "/var/www/www.192.168.27.12.xip.io/public_html/wp-content/plugins/site258"
  
   # Gozma12 Provision
  
