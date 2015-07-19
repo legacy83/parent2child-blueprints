@@ -1,0 +1,57 @@
+/* # Only Screen ≥ 1280px
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Site Containers
+--------------------------------------------- */
+.site-inner,
+.wrap {
+    max-width: 1200px
+}
+
+/* ## Column Widths and Positions
+--------------------------------------------- */
+.content-sidebar-sidebar .content-sidebar-wrap,
+.sidebar-content-sidebar .content-sidebar-wrap,
+.sidebar-sidebar-content .content-sidebar-wrap {
+    width: 980px
+}
+
+.content {
+    width: 800px
+}
+
+.content-sidebar-sidebar .content,
+.sidebar-content-sidebar .content,
+.sidebar-sidebar-content .content {
+    width: 580px
+}
+
+.sidebar-primary {
+    width: 360px
+}
+
+.sidebar-secondary {
+    width: 180px
+}
+
+/* ## Site Header
+--------------------------------------------- */
+.title-area {
+    width: 360px
+}
+
+.site-header .widget-area {
+    width: 800px
+}
+
+/* ## Footer Widgets
+--------------------------------------------- */
+.footer-widgets-1,
+.footer-widgets-2,
+.footer-widgets-3 {
+    width: 340px
+}
+
+.footer-widgets-1 {
+    margin-right: 60px
+}

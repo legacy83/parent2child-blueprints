@@ -1,0 +1,132 @@
+/* # Only Screen ≥ 1024px
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Site Containers
+--------------------------------------------- */
+.site-inner,
+.wrap {
+    margin: 0 auto;
+    max-width: 960px;
+    padding-left: 0;
+    padding-right: 0
+}
+
+/* ## Column Widths and Positions
+--------------------------------------------- */
+/* ### Wrapping div for .content and .sidebar-primary */
+.content-sidebar-sidebar .content-sidebar-wrap,
+.sidebar-content-sidebar .content-sidebar-wrap,
+.sidebar-sidebar-content .content-sidebar-wrap {
+    width: 740px
+}
+
+.content-sidebar-sidebar .content-sidebar-wrap {
+    float: left
+}
+
+.sidebar-content-sidebar .content-sidebar-wrap,
+.sidebar-sidebar-content .content-sidebar-wrap {
+    float: right
+}
+
+/* ### Content */
+.content {
+    float: right;
+    width: 620px
+}
+
+.content-sidebar .content,
+.content-sidebar-sidebar .content,
+.sidebar-content-sidebar .content {
+    float: left
+}
+
+.content-sidebar-sidebar .content,
+.sidebar-content-sidebar .content,
+.sidebar-sidebar-content .content {
+    width: 400px
+}
+
+.full-width-content .content {
+    width: 100%
+}
+
+/* ### Primary Sidebar */
+.sidebar-primary {
+    float: right;
+    width: 300px
+}
+
+.sidebar-content .sidebar-primary,
+.sidebar-sidebar-content .sidebar-primary {
+    float: left
+}
+
+/* ### Secondary Sidebar */
+.sidebar-secondary {
+    float: left;
+    width: 180px
+}
+
+.content-sidebar-sidebar .sidebar-secondary {
+    float: right
+}
+
+/* ## Site Header
+--------------------------------------------- */
+.site-header {
+    min-height: 160px;
+    text-align: left
+}
+
+.site-header .wrap {
+    padding: 40px 0
+}
+
+/* ### Title Area */
+.title-area {
+    float: left;
+    width: 300px
+}
+
+.header-full-width .title-area {
+    width: 100%
+}
+
+/* ### Widget Area */
+.site-header .widget-area {
+    float: right;
+    text-align: right;
+    width: 620px
+}
+
+/* ## Site Navigation
+--------------------------------------------- */
+.genesis-nav-menu {
+    text-align: inherit
+}
+
+.genesis-nav-menu a {
+    padding: 30px 24px
+}
+
+/* ## Footer Widgets
+--------------------------------------------- */
+.footer-widgets-1,
+.footer-widgets-2,
+.footer-widgets-3 {
+    width: 300px
+}
+
+.footer-widgets-1 {
+    margin-right: 30px
+}
+
+.footer-widgets-1,
+.footer-widgets-2 {
+    float: left
+}
+
+.footer-widgets-3 {
+    float: right
+}
