@@ -40,7 +40,10 @@ if ( site258_minimal_php() ) {
     // load public
     // --------------------------------------------
 
-//    require_once( 'functionality/public/class-td251-no-comments.php' );
-//    require_once( 'functionality/public/class-td251-piwik.php' );
+    require_once( 'functionality/public/class-site258-no-comments.php' );
+    __site258_loaded( new Site258_No_Comments() );
+
+    require_once( 'functionality/public/class-site258-purecss.php' );
+    __site258_loaded( new Site258_PureCSS() );
 
 }

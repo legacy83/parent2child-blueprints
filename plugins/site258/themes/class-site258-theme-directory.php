@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Class Site258_Theme_Directory
+ *
+ */
 final class Site258_Theme_Directory
 {
     function __run()
