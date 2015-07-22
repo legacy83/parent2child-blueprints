@@ -21,23 +21,26 @@ if ( site258_minimal_php() ) {
     require_once( 'functionality/site258-bootstrap.php' );
     require_once( 'functionality/includes/class-site258-clip.php' );
 
-    // --------------------------------------------
-    // theme-directory
-    // --------------------------------------------
+    /*
+     * load the embedded theme-directory
+     */
 
     require_once( 'themes/class-site258-theme-directory.php' );
     __site258_run( new Site258_Theme_Directory() );
 
-    // --------------------------------------------
-    // load backend
-    // --------------------------------------------
+    /*
+     * load the backend functionality
+     */
 
-//    require_once( 'functionality/backend/class-td251-jetpack-friendly.php' );
-//    require_once( 'functionality/backend/class-td251-pluginception-driven.php' );
+    require_once( 'functionality/backend/class-site258-jetpack-friendly.php' );
+    __site258_run( new Site258_Jetpack_Friendly() );
 
-    // --------------------------------------------
-    // load public
-    // --------------------------------------------
+    require_once( 'functionality/backend/class-site258-pluginception-driven.php' );
+    __site258_run( new Site258_Pluginception_Driven() );
+
+    /*
+     * load the public functionality
+     */
 
     require_once( 'functionality/public/class-site258-no-comments.php' );
     __site258_loaded( new Site258_No_Comments() );
