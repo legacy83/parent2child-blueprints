@@ -19,6 +19,7 @@ require_once( 'functionality/site258-functions.php' );
 if ( site258_minimal_php() ) {
 
     require_once( 'functionality/site258-bootstrap.php' );
+    require_once( 'functionality/includes/class-site258-clip.php' );
 
     // --------------------------------------------
     // theme-directory
@@ -32,9 +33,7 @@ if ( site258_minimal_php() ) {
     // --------------------------------------------
 
 //    require_once( 'functionality/backend/class-td251-jetpack-friendly.php' );
-//    require_once( 'functionality/backend/class-td251-options.php' );
 //    require_once( 'functionality/backend/class-td251-pluginception-driven.php' );
-//    require_once( 'functionality/backend/class-td251-section-piwik.php' );
 
     // --------------------------------------------
     // load public
@@ -45,5 +44,8 @@ if ( site258_minimal_php() ) {
 
     require_once( 'functionality/public/class-site258-purecss.php' );
     __site258_loaded( new Site258_PureCSS() );
+
+    require_once( 'functionality/public/class-site258-shortcodes.php' );
+    __site258_loaded( new Site258_Shortcodes() );
 
 }
