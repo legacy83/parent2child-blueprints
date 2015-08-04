@@ -14,16 +14,13 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-require_once( 'functionality/site258-bootstrap.php' );
-require_once( 'functionality/includes/class-site258-back-compat.php' );
-__site258_run( $back_compatiblity = new Site258_Back_Compat() );
-
+add_action( 'site258_back_compat_safe', 'site258_safe_bootstrap' );
 /**
- *
+ * Safely continues
+ * ... with the bootstrap of this functionality plugin
  */
-
-if ( $back_compatiblity->safe() ) {
-
+function site258_safe_bootstrap()
+{
     require_once( 'functionality/site258-functions.php' );
     require_once( 'functionality/includes/class-site258-clip.php' );
 
@@ -56,5 +53,13 @@ if ( $back_compatiblity->safe() ) {
 
     require_once( 'functionality/public/class-site258-shortcodes.php' );
     __site258_loaded( new Site258_Shortcodes() );
-
 }
+
+/*
+ * Turn on the lights
+ * ... and bootstrap the functionality plugin
+ */
+
+require_once( 'functionality/site258-bootstrap.php' );
+require_once( 'functionality/includes/class-site258-back-compat.php' );
+__site258_run( $back_compatiblity = new Site258_Back_Compat() );

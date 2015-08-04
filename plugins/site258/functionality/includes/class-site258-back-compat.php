@@ -21,7 +21,7 @@ final class Site258_Back_Compat
      */
     function minimal_php()
     {
-        return version_compare( PHP_VERSION, '5.3.0', '>=' );
+        return version_compare( PHP_VERSION, '5.3.10', '>=' );
     }
 
     /**
@@ -31,7 +31,7 @@ final class Site258_Back_Compat
      */
     function minimal_wp()
     {
-        return version_compare( $GLOBALS[ 'wp_version' ], '4.2.4', '>=' );
+        return version_compare( $GLOBALS[ 'wp_version' ], '4.2.3', '>=' );
     }
 
     /**
