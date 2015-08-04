@@ -16,13 +16,13 @@
 
 require_once( 'functionality/site258-bootstrap.php' );
 require_once( 'functionality/includes/class-site258-back-compat.php' );
-__site258_hooks( $back_compat = new Site258_Back_Compat() );
+__site258_run( $back_compatiblity = new Site258_Back_Compat() );
 
-/*
- * load functionality if minimal requirements is satisfied
+/**
+ *
  */
 
-if ( $back_compat->ok() ) {
+if ( $back_compatiblity->safe() ) {
 
     require_once( 'functionality/site258-functions.php' );
     require_once( 'functionality/includes/class-site258-clip.php' );

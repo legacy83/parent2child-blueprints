@@ -6,11 +6,12 @@
  */
 final class Site258_Back_Compat
 {
-    function __hooks()
+    function __run()
     {
-        if ( !self::ok() ) {
-            add_action( 'admin_notices', array( $this, 'upgrade_notice' ) );
-        }
+        $safe = $this->safe();
+        if ( $safe ) do_action( 'site258_back_compat_safe' );
+        if ( !$safe ) do_action( 'site258_back_compat_unsafe' );
+        if ( !$safe ) add_action( 'admin_notices', array( $this, 'unsafe_notice' ) );
     }
 
     /**
@@ -30,7 +31,7 @@ final class Site258_Back_Compat
      */
     function minimal_wp()
     {
-        return version_compare( $GLOBALS[ 'wp_version' ], '4.2.3', '>=' );
+        return version_compare( $GLOBALS[ 'wp_version' ], '4.2.4', '>=' );
     }
 
     /**
@@ -38,7 +39,7 @@ final class Site258_Back_Compat
      *
      * @return bool|mixed
      */
-    function ok()
+    function safe()
     {
         $requirements = $this->minimal_php();
         $requirements = $requirements && $this->minimal_wp();
@@ -48,11 +49,11 @@ final class Site258_Back_Compat
 
     /**
      * Add message for unsuccessful compatibility check.
-     *
      */
-    function upgrade_notice()
+    function unsafe_notice()
     {
-        $message = __( 'Minimal system requirements from the functionality plugin is not satisfied!', 'site258' );
+        $message = __( 'Unsafe environment for running the functionality plugin!', 'site258' );
+        $message .= __( '&nbsp;Minimal system requirements was not satisfied.', 'site258' );
         printf( '<div class="error"><p>%s</p></div>', $message );
     }
 
