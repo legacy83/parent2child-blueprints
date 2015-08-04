@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Site258 Functionality
  * Plugin URI:   https://github.com/trsenna/parent2child-blueprints
- * Description: Environment and all functionality needed by the Site258 website.
+ * Description: All functionality needed by the Site258 website.
  *
  * Version: 0.1.0
  * Author: Thiago Senna
