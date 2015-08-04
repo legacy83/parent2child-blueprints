@@ -19,6 +19,6 @@
  * ... and bootstrap the functionality plugin
  */
 
-require_once( 'includes/p2c-core-bootstrap.php' );
-require_once( 'includes/class-p2c-core-back-compat.php' );
+require_once( 'base/p2c-core-bootstrap.php' );
+require_once( 'base/class-p2c-core-back-compat.php' );
 __p2c_run( new P2C_Core_Back_Compat() );
