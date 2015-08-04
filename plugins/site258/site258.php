@@ -14,11 +14,17 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-require_once( 'functionality/site258-functions.php' );
+require_once( 'functionality/site258-bootstrap.php' );
+require_once( 'functionality/includes/class-site258-back-compat.php' );
+__site258_hooks( $back_compat = new Site258_Back_Compat() );
 
-if ( site258_minimal_php() ) {
+/*
+ * load functionality if minimal requirements is satisfied
+ */
 
-    require_once( 'functionality/site258-bootstrap.php' );
+if ( $back_compat->ok() ) {
+
+    require_once( 'functionality/site258-functions.php' );
     require_once( 'functionality/includes/class-site258-clip.php' );
 
     /*
