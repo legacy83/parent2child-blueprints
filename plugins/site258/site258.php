@@ -62,4 +62,4 @@ function site258_safe_bootstrap()
 
 require_once( 'functionality/site258-bootstrap.php' );
 require_once( 'functionality/includes/class-site258-back-compat.php' );
-__site258_run( $back_compatiblity = new Site258_Back_Compat() );
+__site258_run( new Site258_Back_Compat() );
