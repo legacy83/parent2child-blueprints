@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   config.ssh.insert_key = false
   config.vm.synced_folder "..", "/vagrant"
   config.vm.synced_folder "../plugins/p2c-core", "/var/www/www.192.168.27.12.xip.io/public_html/wp-content/plugins/p2c-core"
-  config.vm.synced_folder "../plugins/p2c-live", "/var/www/www.192.168.27.12.xip.io/public_html/wp-content/plugins/p2c-live"
+  config.vm.synced_folder "../plugins/p2c-lock", "/var/www/www.192.168.27.12.xip.io/public_html/wp-content/plugins/p2c-lock"
   config.vm.synced_folder "../plugins/site258", "/var/www/www.192.168.27.12.xip.io/public_html/wp-content/plugins/site258"
  
   # Gozma12 Provision
