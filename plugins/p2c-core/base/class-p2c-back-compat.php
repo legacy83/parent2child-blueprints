@@ -1,10 +1,9 @@
 <?php
 
 /**
- * Class P2C_Core_Back_Compat
- *
+ * Class P2C_Back_Compat
  */
-final class P2C_Core_Back_Compat
+final class P2C_Back_Compat
 {
     function __run()
     {
