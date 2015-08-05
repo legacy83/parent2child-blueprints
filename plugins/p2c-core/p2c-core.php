@@ -23,8 +23,7 @@ add_action( 'p2c_back_compat_safe', 'p2c_core_safe_bootstrap' );
  */
 function p2c_core_safe_includes()
 {
-    require_once( 'includes/class-p2c-core-jetpack-friendly.php' );
-    require_once( 'includes/class-p2c-core-pluginception-driven.php' );
+    require_once( 'includes/class-p2c-core-friendly.php' );
 }
 
 /**
@@ -33,8 +32,7 @@ function p2c_core_safe_includes()
  */
 function p2c_core_safe_bootstrap()
 {
-    __p2c_run( new P2C_Core_Jetpack_Friendly() );
-    __p2c_run( new P2C_Core_Pluginception_Driven() );
+    __p2c_run( new P2C_Core_Friendly() );
 }
 
 /*
