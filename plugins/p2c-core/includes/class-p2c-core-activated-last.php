@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class P2C_Core_Jetpack_Friendly
+ * Class P2C_Core_Activated_Last
  *
  */
 final class P2C_Core_Activated_Last
