@@ -25,6 +25,7 @@ function p2c_core_safe_includes()
 {
     require_once( 'includes/class-p2c-core-activated-last.php' );
     require_once( 'includes/class-p2c-core-jetpack-friendly.php' );
+    require_once( 'includes/class-p2c-core-lock.php' );
 }
 
 /**
