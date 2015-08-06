@@ -6,7 +6,7 @@
  */
 final class TwentyFifteen25
 {
-    function __setup()
+    function __after_setup_theme()
     {
         add_filter( 'twentyfifteen_color_schemes', array( $this, 'color_schemes' ) );
     }
