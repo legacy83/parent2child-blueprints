@@ -10,15 +10,15 @@ final class P2C_Core_PureCSS
     {
         add_action( 'wp_enqueue_scripts', array( $this, 'register_styles' ), 0 );
     }
-    
+
     /**
      * Register all the PureCSS modules.
      */
     function register_styles()
     {
-        $pureCDN = trailingslashit( 'http://yui.yahooapis.com/pure/0.6.0' );
+        $pureCDN = untrailingslashit( 'http://yui.yahooapis.com/pure/0.6.0' );
         foreach ( $this->get_individual_modules() as $module => $css_style ) {
-            wp_register_style( $module, "{$pureCDN}{$css_style}" );
+            wp_register_style( $module, "{$pureCDN}/{$css_style}" );
         }
     }
 
