@@ -14,8 +14,33 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-add_action( 'p2c_back_compat_safe', 'p2c_core_safe_includes' );
-add_action( 'p2c_back_compat_safe', 'p2c_core_safe_bootstrap' );
+// must be the last plugin to be activated
+add_filter( 'pre_update_option_active_plugins', 'p2c_core_activated_last', 99 );
+add_filter( 'pre_update_site_option_active_sitewide_plugins', 'p2c_core_activated_last', 99 );
+
+// safely bootstrap the plugin
+add_action( 'p2c_back_compat_safe', 'p2c_core_safe_includes', 5 );
+add_action( 'p2c_back_compat_safe', 'p2c_core_safe_bootstrap', 5 );
+
+/**
+ * Plugin must be the last one to be activated.
+ *
+ * @param array $active_plugins
+ *
+ * @return array
+ */
+function p2c_core_activated_last( array $active_plugins )
+{
+    $basename = plugin_basename( __FILE__ );
+    $key = array_search( $basename, $active_plugins );
+
+    if ( FALSE !== $key ) {
+        array_splice( $active_plugins, $key, 1 );
+        array_push( $active_plugins, $basename );
+    }
+
+    return array_unique( $active_plugins );
+}
 
 /**
  * Safely continues
@@ -23,7 +48,7 @@ add_action( 'p2c_back_compat_safe', 'p2c_core_safe_bootstrap' );
  */
 function p2c_core_safe_includes()
 {
-    require_once( 'includes/class-p2c-core-friendly.php' );
+    require_once( 'includes/class-p2c-core-jetpack-friendly.php' );
 }
 
 /**
