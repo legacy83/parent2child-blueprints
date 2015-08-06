@@ -57,7 +57,7 @@ function p2c_core_safe_includes()
  */
 function p2c_core_safe_bootstrap()
 {
-    __p2c_run( new P2C_Core_Jetpack_Friendly() );
+    __p2c_plugins_loaded( new P2C_Core_Jetpack_Friendly() );
 }
 
 /*

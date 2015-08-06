@@ -30,43 +30,22 @@ function __p2c_hooks( $functionality )
  * @param     $functionality
  * @param int $priority
  */
-function __p2c_loaded( $functionality, $priority = 10 )
-{
-    __p2c_plugins_loaded( $functionality, $priority );
-}
-
-/**
- * Load the functionality within the plugins_loaded hook.
- *
- * @param     $functionality
- * @param int $priority
- */
 function __p2c_plugins_loaded( $functionality, $priority = 10 )
 {
-    if ( method_exists( $functionality, '__loaded' ) ) {
-        add_action( 'plugins_loaded', array( $functionality, '__loaded' ), $priority );
+    if ( method_exists( $functionality, '__plugins_loaded' ) ) {
+        add_action( 'plugins_loaded', array( $functionality, '__plugins_loaded' ), $priority );
     }
 }
 
 /**
- * Load the functionality within the setup_theme hook.
+ * Load the functionality within the after_setup_theme hook.
  *
  * @param     $functionality
  * @param int $priority
  */
 function __p2c_setup_theme( $functionality, $priority = 10 )
 {
-    if ( method_exists( $functionality, '__setup' ) ) {
-        add_action( 'after_setup_theme', array( $functionality, '__setup' ), $priority );
+    if ( method_exists( $functionality, '__after_setup_theme' ) ) {
+        add_action( 'after_setup_theme', array( $functionality, '__after_setup_theme' ), $priority );
     }
-}
-
-/**
- * Makes the functionality live launching it's own hook.
- *
- * @param $functionality
- */
-function __p2c_live( $functionality )
-{
-    do_action( strtolower( get_class( $functionality ) ) . '_live', $functionality );
 }
