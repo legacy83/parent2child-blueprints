@@ -14,6 +14,8 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
+ini_set( 'display_errors', 1 );
+
 add_action( 'p2c_back_compat_safe', 'site258_safe_includes' );
 add_action( 'p2c_back_compat_safe', 'site258_safe_bootstrap' );
 
@@ -33,6 +35,8 @@ function site258_safe_includes()
  */
 function site258_safe_bootstrap()
 {
+    register_theme_directory( dirname( __FILE__ ) . '/themes' );
+
     __p2c_plugins_loaded( new P2C_Core_No_Comments() );
     __p2c_plugins_loaded( new P2C_Core_PureCSS() );
     __p2c_plugins_loaded( new Site258_Assets() );

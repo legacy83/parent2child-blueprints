@@ -43,7 +43,7 @@ function __p2c_plugins_loaded( $functionality, $priority = 10 )
  * @param     $functionality
  * @param int $priority
  */
-function __p2c_setup_theme( $functionality, $priority = 10 )
+function __p2c_after_setup_theme( $functionality, $priority = 10 )
 {
     if ( method_exists( $functionality, '__after_setup_theme' ) ) {
         add_action( 'after_setup_theme', array( $functionality, '__after_setup_theme' ), $priority );

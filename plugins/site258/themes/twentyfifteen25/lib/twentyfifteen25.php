@@ -21,5 +21,5 @@ require_once( 'inc/class-twentyfifteen25-google-fonts.php' );
 require_once( 'class-twentyfifteen25.php' );
 require_once( 'class-twentyfifteen25-assets.php' );
 
-__site258_setup_theme( new TwentyFifteen25() );
-__site258_setup_theme( new TwentyFifteen25_Assets() );
+__p2c_after_setup_theme( new TwentyFifteen25() );
+__p2c_after_setup_theme( new TwentyFifteen25_Assets() );

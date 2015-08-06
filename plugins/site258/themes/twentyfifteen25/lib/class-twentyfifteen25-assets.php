@@ -58,6 +58,9 @@ final class TwentyFifteen25_Assets
 
         $parent_dir_uri = trailingslashit( get_template_directory_uri() );
         $child_dir_uri = trailingslashit( get_stylesheet_directory_uri() );
+        echo 'ola mundo <br><br><br><br><br><br><br><br><br><br><br><br>';
+        echo $parent_dir_uri;
+
         wp_register_style( 'twentyfifteen25-parent', "{$parent_dir_uri}style.css" );
         wp_enqueue_style( 'twentyfifteen25-theme', "{$child_dir_uri}lib/assets/css/theme.css", array( 'twentyfifteen25-parent' ) );
         wp_enqueue_style( 'twentyfifteen-style' );
