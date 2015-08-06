@@ -19,8 +19,8 @@ add_filter( 'pre_update_option_active_plugins', 'p2c_core_activated_last', 99 );
 add_filter( 'pre_update_site_option_active_sitewide_plugins', 'p2c_core_activated_last', 99 );
 
 // safely bootstrap the plugin
-add_action( 'p2c_back_compat_safe', 'p2c_core_safe_includes', 5 );
-add_action( 'p2c_back_compat_safe', 'p2c_core_safe_bootstrap', 5 );
+add_action( 'p2c_back_compat_safe', 'p2c_core_safe_includes', 3 );
+add_action( 'p2c_back_compat_safe', 'p2c_core_safe_bootstrap', 3 );
 
 /**
  * Plugin must be the last one to be activated.
@@ -57,7 +57,7 @@ function p2c_core_safe_includes()
  */
 function p2c_core_safe_bootstrap()
 {
-    __p2c_run( new P2C_Core_Friendly() );
+    __p2c_run( new P2C_Core_Jetpack_Friendly() );
 }
 
 /*
