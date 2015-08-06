@@ -6,6 +6,9 @@
  */
 final class P2C_Core_Activated_Last
 {
+    /**
+     * @var string $file The filename of plugin.
+     */
     private $plugin_file;
 
     function __construct( $plugin_file )
