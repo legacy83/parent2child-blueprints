@@ -23,7 +23,8 @@ add_action( 'p2c_back_compat_safe', 'site258_safe_bootstrap' );
  */
 function site258_safe_includes()
 {
-
+    require_once( 'functionality/public/class-site258-assets.php' );
+    require_once( 'functionality/public/class-site258-shortcodes.php' );
 }
 
 /**
@@ -34,4 +35,6 @@ function site258_safe_bootstrap()
 {
     __p2c_plugins_loaded( new P2C_Core_No_Comments() );
     __p2c_plugins_loaded( new P2C_Core_PureCSS() );
+    __p2c_plugins_loaded( new Site258_Assets() );
+    __p2c_plugins_loaded( new Site258_Shortcodes() );
 }

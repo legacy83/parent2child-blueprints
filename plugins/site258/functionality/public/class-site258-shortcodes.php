@@ -4,9 +4,9 @@
  * Class Site258_Shortcodes
  *
  */
-final class Site258_Shortcodes extends Site258_Clip
+final class Site258_Shortcodes extends P2C_Core_Clip
 {
-    function __loaded()
+    function __plugins_loaded()
     {
         add_shortcode( 'hello', array( $this, 'hello' ) );
         add_shortcode( 'sticky-posts', array( $this, 'sticky_posts' ) );
