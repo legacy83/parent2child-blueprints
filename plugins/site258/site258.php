@@ -14,52 +14,24 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-add_action( 'site258_back_compat_safe', 'site258_safe_bootstrap' );
+add_action( 'p2c_back_compat_safe', 'site258_safe_includes' );
+add_action( 'p2c_back_compat_safe', 'site258_safe_bootstrap' );
+
 /**
  * Safely continues
- * ... with the bootstrap of this functionality plugin
+ * ... with the includes needed by the functionality plugin
+ */
+function site258_safe_includes()
+{
+
+}
+
+/**
+ * Safely continues
+ * ... with the functionality plugin bootstrap
  */
 function site258_safe_bootstrap()
 {
-    require_once( 'functionality/site258-functions.php' );
-    require_once( 'functionality/includes/class-site258-clip.php' );
-
-    /*
-     * load the embedded theme-directory
-     */
-
-    require_once( 'themes/class-site258-theme-directory.php' );
-    __site258_run( new Site258_Theme_Directory() );
-
-    /*
-     * load the backend functionality
-     */
-
-    require_once( 'functionality/backend/class-site258-jetpack-friendly.php' );
-    __site258_run( new Site258_Jetpack_Friendly() );
-
-    require_once( 'functionality/backend/class-site258-pluginception-driven.php' );
-    __site258_run( new Site258_Pluginception_Driven() );
-
-    /*
-     * load the public functionality
-     */
-
-    require_once( 'functionality/public/class-site258-no-comments.php' );
-    __site258_loaded( new Site258_No_Comments() );
-
-    require_once( 'functionality/public/class-site258-purecss.php' );
-    __site258_loaded( new Site258_PureCSS() );
-
-    require_once( 'functionality/public/class-site258-shortcodes.php' );
-    __site258_loaded( new Site258_Shortcodes() );
+    __p2c_plugins_loaded( new P2C_Core_No_Comments() );
+    __p2c_plugins_loaded( new P2C_Core_PureCSS() );
 }
-
-/*
- * Turn on the lights
- * ... and bootstrap the functionality plugin
- */
-
-require_once( 'functionality/site258-bootstrap.php' );
-require_once( 'functionality/includes/class-site258-back-compat.php' );
-__site258_run( new Site258_Back_Compat() );

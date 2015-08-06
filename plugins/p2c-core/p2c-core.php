@@ -15,6 +15,7 @@
  */
 
 add_action( 'p2c_back_compat_safe', 'p2c_core_safe_includes', 3 );
+add_action( 'p2c_back_compat_safe', 'p2c_core_safe_snippets', 3 );
 add_action( 'p2c_back_compat_safe', 'p2c_core_safe_bootstrap', 3 );
 
 /**
@@ -24,8 +25,19 @@ add_action( 'p2c_back_compat_safe', 'p2c_core_safe_bootstrap', 3 );
 function p2c_core_safe_includes()
 {
     require_once( 'includes/class-p2c-core-activated-last.php' );
+    require_once( 'includes/class-p2c-core-clip.php' );
     require_once( 'includes/class-p2c-core-jetpack-friendly.php' );
     require_once( 'includes/class-p2c-core-lock.php' );
+}
+
+/**
+ * Safely continues
+ * ... including some really cool snippets
+ */
+function p2c_core_safe_snippets()
+{
+    require_once( 'snippets/public/class-p2c-core-no-comments.php' );
+    require_once( 'snippets/public/class-p2c-core-purecss.php' );
 }
 
 /**
