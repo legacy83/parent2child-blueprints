@@ -6,11 +6,17 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "192.168.27.12"
 
   config.vm.synced_folder "..", "/vagrant"
-  config.vm.synced_folder "../themes/genesis21", "/var/www/www.192.168.27.12.xip.io/public_html/wp-content/themes/genesis21"
-  config.vm.synced_folder "../themes/kuorinka34", "/var/www/www.192.168.27.12.xip.io/public_html/wp-content/themes/kuorinka34"
-  config.vm.synced_folder "../themes/saga49", "/var/www/www.192.168.27.12.xip.io/public_html/wp-content/themes/saga49"
-  config.vm.synced_folder "../themes/simppeli37", "/var/www/www.192.168.27.12.xip.io/public_html/wp-content/themes/simppeli37"
-  config.vm.synced_folder "../themes/stargazer12", "/var/www/www.192.168.27.12.xip.io/public_html/wp-content/themes/stargazer12"
-  config.vm.synced_folder "../themes/twenty15", "/var/www/www.192.168.27.12.xip.io/public_html/wp-content/themes/twenty15"
+  config.vm.synced_folder "../genesis21", "/var/www/www.192.168.27.12.xip.io/public_html/wp-content/themes/genesis21"
+  config.vm.synced_folder "../kuorinka34", "/var/www/www.192.168.27.12.xip.io/public_html/wp-content/themes/kuorinka34"
+  config.vm.synced_folder "../saga49", "/var/www/www.192.168.27.12.xip.io/public_html/wp-content/themes/saga49"
+  config.vm.synced_folder "../simppeli37", "/var/www/www.192.168.27.12.xip.io/public_html/wp-content/themes/simppeli37"
+  config.vm.synced_folder "../stargazer12", "/var/www/www.192.168.27.12.xip.io/public_html/wp-content/themes/stargazer12"
+  config.vm.synced_folder "../twenty15", "/var/www/www.192.168.27.12.xip.io/public_html/wp-content/themes/twenty15"
+
+  ###############################################################
+  # cli/provision
+  ###############################################################
+
+  config.vm.provision "shell", path: "cli/provision.sh", privileged: false
 
 end
